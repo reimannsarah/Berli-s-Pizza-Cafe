@@ -113,7 +113,7 @@ function formatCreditCard(input) {
 }
 
 window.addEventListener("load", function() {
-  this.document.getElementById("pizza-selection").addEventListener("submit",handlePizzaFormSubmission);
+  this.document.getElementById("cart-button").addEventListener("click",handlePizzaFormSubmission);
   this.document.getElementById("pay-now").addEventListener("click", payNow);
   this.document.getElementById("payment-info").addEventListener("submit",submitPayment);
 })

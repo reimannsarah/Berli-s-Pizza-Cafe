@@ -9,10 +9,17 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Berli's Pizza Cafe</h1>
+  <h1 id="title">Berli's Pizza Cafe</h1>
+  <ul id="size-price">
+    <li>Personal <span class="prices">$10</span></li>
+    <li>Medium <span class="prices">$12</span></li>
+    <li>Large <span class="prices">$14</span></li>
+    <li>Extra Large <span class="prices">$16</span></li>
+    <li>Selections <span class="prices">$2</span></li>
+  </ul>
   <form id="pizza-selection">
     <select name="" name="topping-option" id="size-selection">
-      <option value="1">Please select a size</option>
+      <option>Please select a size</option>
       <option>Personal</option>
       <option>Medium</option>
       <option>Large</option>
@@ -20,74 +27,76 @@
     </select>
     <br>
     <br>
-    <h3>Please select your toppings:</h3> 
-    <div id="sauces">
-      <h4>Sauces</h4>
-      <input value="Marinara" type="checkbox" class="topping-option" id="marinara" >
-      <label for="marinara">Marinara</label>
-      <br>
-      <input value="Basil Pesto" type="checkbox" class="topping-option" id="basil-pesto">
-      <label for="basil-pesto">Basil Pesto</label>
-      <br>
-      <input value="White Sauce" type="checkbox" class="topping-option" id="white-sauce" >
-      <label for="white-sauce">White Sauce</label>
-      <br>
-    </div>
-    <div id="cheeses">
-      <h4>Cheeses</h4>
-      <input value="Mozarella" type="checkbox" class="topping-option" id="mozarella">
-      <label for="mozarella">Mozarella</label>
-      <br>
-      <input value="Chevre" type="checkbox" class="topping-option" id="chevre">
-      <label for="Chevre">Chevre</label>
-      <br>
-      <input value="Pecorino Romano" type="checkbox" class="topping-option" id="pecorino-romano">
-      <label for="pecorino-romano">Pecorino Romano</label>
-      <br>
-      <input value="Cashew Cheese (v)" type="checkbox" class="topping-option" id="cashew-cheese">
-      <label for="cashew-cheese">Cashew Cheese</label>
-      <br>
-    </div>
-    <div id="toppings">
-      <h4>Toppings</h4>
-      <input value="Anchovies" type="checkbox" class="topping-option" id="anchovies" >
-      <label for="anchovies">Anchovies</label>
-      <br>   
-      <input value="Roma Tomatoes" type="checkbox" class="topping-option" id="roma-tomatoes" >
-      <label for="roma-tomatoes">Roma Tomatoes</label>
-      <br>
-      <input value="Olives" type="checkbox" class="topping-option" id="olives">
-      <label for="olives">Olives</label>
-      <br>
-      <input value="Chili Oil" type="checkbox" class="topping-option" id="chili-oil">
-      <label for="chili-oil">Chili Oil</label>
-      <br>
-      <input value="Italian Sausage" type="checkbox" class="topping-option" id="italian-sausage">
-      <label for="italian-sausage">Italian Sausage</label>
-      <br>
-      <input value="Veggie Sausage" type="checkbox" class="topping-option" id="veggie-sausage">
-      <label for="veggie-sausage">Veggie Sausage</label>
-      <br>
-      <input value="Roasted Garlic" type="checkbox" class="topping-option" id="roasted-garlic">
-      <label for="roasted-garlic">Roasted Garlic</label>
-      <br>
-      <input value="Mushrooms" type="checkbox" class="topping-option" id="mushrooms">
-      <label for="mushrooms">Mushrooms</label>
-    </div>
-    <div id="extras">
-      <h4>Extras</h4>
-      <input value="Extra Cheese" type="checkbox" class="topping-option" id="extra-cheese">
-      <label for="extra-cheese">Extra Cheese</label>
-      <br>
-      <input value="Extra Sauce" type="checkbox" class="topping-option" id="extra-sauce">
-      <label for="extra-sauce">Extra</label>
-    </div>
-    <br><br>
-    <button type="submit">Submit</button>
-</form>
+    <h3>Please make your selections:</h3> 
+    <div class="container">
+      <div id="sauces">
+        <h4>Sauces</h4>
+        <input value="Marinara" type="checkbox" class="topping-option" id="marinara" >
+        <label for="marinara">Marinara</label>
+        <br>
+        <input value="Basil Pesto" type="checkbox" class="topping-option" id="basil-pesto">
+        <label for="basil-pesto">Basil Pesto</label>
+        <br>
+        <input value="White Sauce" type="checkbox" class="topping-option" id="white-sauce" >
+        <label for="white-sauce">White Sauce</label>
+        <br>
+      </div>
+      <div id="cheeses">
+        <h4>Cheeses</h4>
+        <input value="Mozarella" type="checkbox" class="topping-option" id="mozarella">
+        <label for="mozarella">Mozarella</label>
+        <br>
+        <input value="Chevre" type="checkbox" class="topping-option" id="chevre">
+        <label for="Chevre">Chevre</label>
+        <br>
+        <input value="Pecorino Romano" type="checkbox" class="topping-option" id="pecorino-romano">
+        <label for="pecorino-romano">Pecorino Romano</label>
+        <br>
+        <input value="Cashew Cheese (v)" type="checkbox" class="topping-option" id="cashew-cheese">
+        <label for="cashew-cheese">Cashew Cheese</label>
+        <br>
+      </div>
+      <div id="toppings">
+        <h4>Toppings</h4>
+        <input value="Anchovies" type="checkbox" class="topping-option" id="anchovies" >
+        <label for="anchovies">Anchovies</label>
+        <br>   
+        <input value="Roma Tomatoes" type="checkbox" class="topping-option" id="roma-tomatoes" >
+        <label for="roma-tomatoes">Roma Tomatoes</label>
+        <br>
+        <input value="Olives" type="checkbox" class="topping-option" id="olives">
+        <label for="olives">Olives</label>
+        <br>
+        <input value="Chili Oil" type="checkbox" class="topping-option" id="chili-oil">
+        <label for="chili-oil">Chili Oil</label>
+        <br>
+        <input value="Italian Sausage" type="checkbox" class="topping-option" id="italian-sausage">
+        <label for="italian-sausage">Italian Sausage</label>
+        <br>
+        <input value="Veggie Sausage" type="checkbox" class="topping-option" id="veggie-sausage">
+        <label for="veggie-sausage">Veggie Sausage</label>
+        <br>
+        <input value="Roasted Garlic" type="checkbox" class="topping-option" id="roasted-garlic">
+        <label for="roasted-garlic">Roasted Garlic</label>
+        <br>
+        <input value="Mushrooms" type="checkbox" class="topping-option" id="mushrooms">
+        <label for="mushrooms">Mushrooms</label>
+      </div>
+      <div id="extras">
+        <h4>Extras</h4>
+        <input value="Extra Cheese" type="checkbox" class="topping-option" id="extra-cheese">
+        <label for="extra-cheese">Extra Cheese</label>
+        <br>
+        <input value="Extra Sauce" type="checkbox" class="topping-option" id="extra-sauce">
+        <label for="extra-sauce">Extra Sauce</label>
+      </div>
+      <br><br>
+  </form>
+</div>
+<button id="cart-button">Add to Cart</button>
 <div id="remove-order-summary">
   <div id="order-summary" class="order-summary-hidden">
-    <h4>Order Summary</h4>
+    <h4>Order Summary:</h4>
   </div>
   <div id="running-total" class="order-summary-hidden"></div>
   <button id="pay-now" class="order-summary-hidden">Pay Now</button>
@@ -109,7 +118,7 @@
   <label for="tip">Tip:</label>
   <input type="text"  id="tip" data-type="currency" placeholder="$0.00">
   <br><br>
-  <button type="submit">Submit Payment</button>
+  <button id="submit-button" type="submit">Submit Payment</button>
 </form>
   <div id ="receipt" class="receipt-hidden">
     <h3>Receipt</h3>

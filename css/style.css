@@ -1,4 +1,6 @@
-.payment-hidden{
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+.payment-hidden {
   display: none;
 }
 .receipt-hidden{
@@ -10,4 +12,53 @@
 
 .remove-order-summary {
   display: none;
+}
+
+body{
+  background-color: #FDAF88;
+  font-family: Kanit, monospace;
+  
+}
+
+#title{
+  text-align: center;
+}
+
+#size-price {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+#size-selection {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 30px;
+  padding: 8px;
+}
+
+#cart-button {
+  border: none;
+  border-radius: 30px;
+  padding: 8px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#order-summary {
+  background-color: #E15634;
+  padding: 3px 7px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+#pay-now {
+  border: none;
+  border-radius: 30px;
+  padding: 8px;
+  margin: 20px;
+  float: right;
 }
