@@ -4,3 +4,6 @@
 .receipt-hidden{
   display: none;
 }
+.order-summary-hidden {
+  display: none;
+}

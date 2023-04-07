@@ -42,7 +42,7 @@ function arrayToppings() {
     let topping = element.value;
     toppingsArray.push(topping);
   });
-  return toppingsArray;
+  return toppingsArray.join(", ");
   }
 
 function handlePizzaFormSubmission(e){
@@ -53,7 +53,26 @@ function handlePizzaFormSubmission(e){
   pizza.calculateCost();
   console.log(pizza);
   console.log(paymentTotal);
+  let orderSummary = document.getElementById("order-summary");
+  let pPizzaSize = document.createElement("p");
+  let pToppings = document.createElement("p");
+  pPizzaSize.innerText =pizza.size + " Pizza";
+  pToppings.innerText = "Toppings: " + pizza.toppings;
+  orderSummary.append(pPizzaSize,pToppings)
+  orderSummary.removeAttribute("class");
+  
+  // displayOrderSummary();
 }
+
+// function displayOrderSummary() {
+//   let orderSummary = document.getElementById("order-summary");
+//   let pPizzaSize = document.createElement("p");
+//   let pToppings = document.createElement("p");
+//   let pizzaSize = pPizzaSize.append(pizza.size);
+//   let toppings = pToppings.append(pizza.toppings);
+//   orderSummary.append(pizzaSize,toppings);  
+// }
+
 
 
 
