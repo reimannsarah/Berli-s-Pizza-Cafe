@@ -38,30 +38,18 @@ function PaymentInfo (creditCardNumber, expDate, cvv, zipCode, tip){
 
 //UI logic
 
-function radioBtns(){
-  let radiobtn = document.getElementsByName("topping-option");
-  if(radiobtn.value === false){
-    radiobtn.value=true;
-  }
-  console.log(radiobtn.value);
-}
-
 function arrayToppings() {
   let toppingsArray = [];
-  let toppingsOption = document.getElementsByName("topping-option");
-  for(i = 0; i < toppingsOption.length; i ++){
-    if(toppingsOption[i].value === true){
-      toppingsArray.push(toppingsOption);
-    }
-  }
+  let toppingsOption = document.querySelectorAll('input[type="checkbox"]:checked')
+  toppingsOption.forEach(function(element) {
+    let topping = element.value;
+    toppingsArray.push(topping);
+  });
   console.log(toppingsArray);
   }
 
 function handlePizzaFormSubmission(e){
   e.preventDefault();
-  // let sizeSelection = document.getElementById("size-selection").value;
-  // let toppingsArray = [];
-  // let toppings = document.getElementById("")
   arrayToppings();
 }
 
