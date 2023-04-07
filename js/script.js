@@ -33,17 +33,19 @@ function PaymentInfo (creditCardNumber, expDate, cvv, zipCode, tip){
   this.tip = tip;
 }
 
-//UI logic
-
 function arrayToppings() {
   let toppingsArray = [];
   let toppingsOption = document.querySelectorAll('input[type="checkbox"]:checked')
-  toppingsOption.forEach(function(element) {
+  toppingsOption.forEach(function (element) {
     let topping = element.value;
     toppingsArray.push(topping);
   });
   return toppingsArray;
-  }
+}
+
+//UI logic
+
+
 
 function handlePizzaFormSubmission(e){
   e.preventDefault();  
@@ -56,13 +58,21 @@ function handlePizzaFormSubmission(e){
   let orderSummary = document.getElementById("order-summary");
   let pPizzaSize = document.createElement("p");
   let pToppings = document.createElement("p");
+  let total = document.createElement("p");
+  total.innerText = "Total: $" + paymentTotal;
   pPizzaSize.innerText =pizza.size + " Pizza";
   pToppings.innerText = "Toppings: " + pizza.toppings.join(", ");
-  orderSummary.append(pPizzaSize,pToppings)
+  orderSummary.append(pPizzaSize,pToppings, total)
   orderSummary.removeAttribute("class");
+  resetForm();
 }
 
-
+function resetForm() {
+  const pizzaForm = document.getElementById("pizza-selection");
+  if (pizzaForm){
+  pizzaForm.reset();
+  }
+}
 
 
 

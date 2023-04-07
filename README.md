@@ -16,7 +16,12 @@ Expected Output: PaymentInfo {creditCardNumber: [1234,5678,9012,3456], expDate: 
 
 Describe: Pizza.protoype.calculateCost();
 
-Test: "It should check add the cost of the size plus the lenghth of the toppings array * 2"
+Test: "It should check add the cost of the size plus the length of the toppings array * 2"
 Code: let pizza = new Pizza(["anchovies", "olives", "basil"], "personal"
 pizza.calculateCost;
 Expected Output: 16
+
+Describe: arrayToppings();
+Test: "It should make an array of the checked topping choices"
+Code: toppingsArray;
+ExpectedOutput: an array of the selected toppings
