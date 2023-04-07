@@ -50,6 +50,26 @@
     <br>
     <input type="radio" id="mushrooms">
     <label for="mushrooms">Mushrooms</label>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+<form>
+  <h3>Payment Information</h3>
+  <label for="credit-card">Credit Card Number:</label>
+  <input type="text" id="credit-card" maxlength="16" oninput="formatCreditCard(this)">
+  <br><br>
+  <label for="exp-date">Expiration Date:</label>
+  <input type="text" id="exp-date">
+  <br><br>
+  <label for="cvv">CVV:</label>
+  <input type="text" id="cvv" maxlength="3">
+  <br><br>
+  <label for="zip-code">Zip Code:</label>
+  <input type="text" id="zip-code" maxlength="5">
+  <br><br>
+  <label for="tip">Tip:</label>
+  <input type="text" id="tip" data-type="currency" placeholder="$0.00">
+  
 </form>
   
 </body>

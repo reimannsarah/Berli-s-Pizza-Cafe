@@ -37,3 +37,14 @@ function PaymentInfo (creditCardNumber, expDate, cvv, zipCode, tip){
 }
 
 //UI logic
+
+function formatCreditCard(input) {
+  let value = input.value.replace(/\D/g, "");
+  value = value.replace(/(\d{4})(\d{4})(\d{4})(\d{4})/, '$1-$2-$3-$4');
+  input.value = value;
+}
+
+function formatTip(input){
+  let value = input.value.replace(/\D/g, "");
+
+}
