@@ -13,19 +13,16 @@ Pizza.prototype.calculateCost = function(){
   let medium = 12;
   let large = 14;
   let extraLarge = 16;
-  if(this.size === "personal"){
+  if(this.size === "Personal"){
     paymentTotal =  personal + this.toppings.length * 2;
-    console.log(paymentTotal);
-  }else if(this.size === "medium"){
+  }else if(this.size === "Medium"){
     paymentTotal =  medium + this.toppings.length * 2;
-    console.log(paymentTotal);
-  }else if(this.size === "large"){
+  }else if(this.size === "Large"){
     paymentTotal =  large + this.toppings.length * 2;
-    console.log(paymentTotal);
-  }else {
+  }else if(this.size === "Extra Large"){
     paymentTotal =  extraLarge + this.toppings.length * 2;
-    console.log(paymentTotal);
   }
+  return paymentTotal;
 }
 
 function PaymentInfo (creditCardNumber, expDate, cvv, zipCode, tip){
@@ -45,13 +42,20 @@ function arrayToppings() {
     let topping = element.value;
     toppingsArray.push(topping);
   });
-  console.log(toppingsArray);
+  return toppingsArray;
   }
 
 function handlePizzaFormSubmission(e){
-  e.preventDefault();
-  arrayToppings();
+  e.preventDefault();  
+  let size = document.getElementById("size-selection").value;
+  let toppings = arrayToppings();
+  let pizza = new Pizza(toppings,size)
+  pizza.calculateCost();
+  console.log(pizza);
+  console.log(paymentTotal);
 }
+
+
 
 
 
