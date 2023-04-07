@@ -53,13 +53,13 @@
     <br><br>
     <button type="submit">Submit</button>
 </form>
-<form>
+<form class="payment-hidden">
   <h3>Payment Information</h3>
   <label for="credit-card">Credit Card Number:</label>
-  <input type="text" id="credit-card" maxlength="16" oninput="formatCreditCard(this)">
+  <input type="text" id="credit-card" maxlength="16" oninput="formatCreditCard(this)" placeholder="xxxx-xxxx-xxxx-xxxx">
   <br><br>
   <label for="exp-date">Expiration Date:</label>
-  <input type="text" id="exp-date">
+  <input type="text" id="exp-date" placeholder="MM/YY">
   <br><br>
   <label for="cvv">CVV:</label>
   <input type="text" id="cvv" maxlength="3">
@@ -69,8 +69,14 @@
   <br><br>
   <label for="tip">Tip:</label>
   <input type="text" id="tip" data-type="currency" placeholder="$0.00">
-  
+  <br><br>
+  <button type="submit">Submit Payment</button>
 </form>
-  
+  <div class="receipt-hidden">
+    <h3>Receipt</h3>
+    <p>Credit Card: <span id="redactedCC"></span></p>
+    <p id="total-cost">Total:</p>
+    <h1>Thank you!</h1>
+  </div>
 </body>
 </html>
