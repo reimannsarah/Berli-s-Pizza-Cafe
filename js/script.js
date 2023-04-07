@@ -63,8 +63,7 @@ function handlePizzaFormSubmission(e){
   pPizzaSize.innerText =pizza.size + " Pizza";
   pToppings.innerText = "Toppings: " + pizza.toppings.join(", ");
   orderSummary.append(pPizzaSize,pToppings, total)
-  orderSummary.removeAttribute("class");
-  
+  orderSummary.removeAttribute("class");  
   resetForm();
 }
 
