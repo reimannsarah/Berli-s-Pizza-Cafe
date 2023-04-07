@@ -69,7 +69,6 @@ function handlePizzaFormSubmission(e){
   runningTotal.removeAttribute("class");
   let payNowButton = document.getElementById("pay-now");
   payNowButton.removeAttribute("class");
-
   resetForm();
 }
 
