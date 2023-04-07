@@ -1,3 +1,8 @@
+//Global Variables
+let paymentTotal = 0;
+
+//Business logic
+
 function Pizza (toppings, size) {
   this.toppings = toppings;
   this.size = size;
@@ -9,13 +14,17 @@ Pizza.prototype.calculateCost = function(){
   let large = 14;
   let extraLarge = 16;
   if(this.size === "personal"){
-    return personal + this.toppings.length * 2;
+    paymentTotal =  personal + this.toppings.length * 2;
+    console.log(paymentTotal);
   }else if(this.size === "medium"){
-    return medium + this.toppings.length * 2;
+    paymentTotal =  medium + this.toppings.length * 2;
+    console.log(paymentTotal);
   }else if(this.size === "large"){
-    return large + this.toppings.length * 2;
+    paymentTotal =  large + this.toppings.length * 2;
+    console.log(paymentTotal);
   }else {
-    return extraLarge + this.toppings.length * 2;
+    paymentTotal =  extraLarge + this.toppings.length * 2;
+    console.log(paymentTotal);
   }
 }
 
@@ -27,3 +36,4 @@ function PaymentInfo (creditCardNumber, expDate, cvv, zipCode, tip){
   this.tip = tip;
 }
 
+//UI logic
