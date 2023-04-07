@@ -84,7 +84,20 @@ function submitPayment(e) {
   e.preventDefault();
   let ccNumber = document.getElementById("credit-card").value;
   let arrayedCCNumber = ccNumber.split("-");
-  console.log(arrayedCCNumber);
+  let lastFour = arrayedCCNumber.pop();
+  let tip = parseInt(document.getElementById("tip").value);
+  let finalTotal = paymentTotal + tip;
+  let receipt = document.getElementById("receipt");
+  let receiptCCNumber = document.createElement("p");
+  let totalPaid = document.createElement("p");
+  receiptCCNumber.innerText = "Paid with: xxxx-xxxx-xxxx-" + lastFour;
+  totalPaid.innerText = "Total Paid: $" + finalTotal;
+  receipt.append(receiptCCNumber,totalPaid);
+  receipt.removeAttribute("class");
+  let paymentInfo = document.getElementById("payment-info");
+  paymentInfo.setAttribute("class", "payment-hidden");
+  
+
 }
 
 function resetForm() {
