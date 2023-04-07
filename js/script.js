@@ -38,13 +38,43 @@ function PaymentInfo (creditCardNumber, expDate, cvv, zipCode, tip){
 
 //UI logic
 
+function radioBtns(){
+  let radiobtn = document.getElementsByName("topping-option");
+  if(radiobtn.value === false){
+    radiobtn.value=true;
+  }
+  console.log(radiobtn.value);
+}
+
+function arrayToppings() {
+  let toppingsArray = [];
+  let toppingsOption = document.getElementsByName("topping-option");
+  for(i = 0; i < toppingsOption.length; i ++){
+    if(toppingsOption[i].value === true){
+      toppingsArray.push(toppingsOption);
+    }
+  }
+  console.log(toppingsArray);
+  }
+
+function handlePizzaFormSubmission(e){
+  e.preventDefault();
+  // let sizeSelection = document.getElementById("size-selection").value;
+  // let toppingsArray = [];
+  // let toppings = document.getElementById("")
+  arrayToppings();
+}
+
+
+
+
+
 function formatCreditCard(input) {
   let value = input.value.replace(/\D/g, "");
   value = value.replace(/(\d{4})(\d{4})(\d{4})(\d{4})/, '$1-$2-$3-$4');
   input.value = value;
 }
 
-function formatTip(input){
-  let value = input.value.replace(/\D/g, "");
-
-}
+window.addEventListener("load", function() {
+  this.document.getElementById("pizza-selection").addEventListener("submit",handlePizzaFormSubmission);
+})
