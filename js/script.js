@@ -87,11 +87,10 @@ function submitPayment(e) {
   let tip = parseInt(document.getElementById("tip").value);
   let finalTotal = paymentTotal + tip;
   let receipt = document.getElementById("receipt");
-  let receiptCCNumber = document.createElement("p");
-  let totalPaid = document.createElement("p");
+  let receiptCCNumber = document.getElementById("redactedCC");
+  let totalPaid = document.getElementById("total-cost");
   receiptCCNumber.innerText = "Paid with: xxxx-xxxx-xxxx-" + lastFour;
   totalPaid.innerText = "Total Paid: $" + finalTotal;
-  receipt.append(receiptCCNumber,totalPaid);
   receipt.removeAttribute("class");
   let paymentInfo = document.getElementById("payment-info");
   paymentInfo.setAttribute("class", "payment-hidden");
@@ -112,9 +111,14 @@ function formatCreditCard(input) {
   input.value = value;
 }
 
+function newOrder() {
+  location.reload();
+}
+
 window.addEventListener("load", function() {
   this.document.getElementById("cart-button").addEventListener("click",handlePizzaFormSubmission);
   this.document.getElementById("pay-now").addEventListener("click", payNow);
   this.document.getElementById("payment-info").addEventListener("submit",submitPayment);
+  this.document.getElementById("new-order").addEventListener("click", newOrder);
 })
 

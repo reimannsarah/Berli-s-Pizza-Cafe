@@ -43,6 +43,13 @@ body{
   border-radius: 30px;
   padding: 8px;
 }
+
+.payment-info {
+    border: none;
+    border-radius: 30px;
+    padding: 8px;
+}
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -61,4 +68,22 @@ body{
   padding: 8px;
   margin: 20px;
   float: right;
+}
+
+#submit-button {
+  border: none;
+  border-radius: 30px;
+  padding: 8px;
+  margin: 20px;
+}
+
+#receipt {
+  background: #F85A3E;
+}
+
+#new-order {
+  border: none;
+  border-radius: 30px;
+  padding: 8px;
+  margin: 20px;
 }
