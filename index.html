@@ -53,11 +53,14 @@
     <br><br>
     <button type="submit">Submit</button>
 </form>
-<div id="order-summary" class="order-summary-hidden">
-  <h4>Order Summary</h4>
-  <div id="running-total" class="order-summary-hidden">Total in cart:</div>
+<div id="remove-order-summary">
+  <div id="order-summary" class="order-summary-hidden">
+    <h4>Order Summary</h4>
+  </div>
+  <div id="running-total" class="order-summary-hidden"></div>
+  <button id="pay-now" class="order-summary-hidden">Pay Now</button>
 </div>
-<form class="payment-hidden">
+<form id="payment-info" class="payment-hidden">
   <h3>Payment Information</h3>
   <label for="credit-card">Credit Card Number:</label>
   <input type="text"  id="credit-card" maxlength="16" oninput="formatCreditCard(this)" placeholder="xxxx-xxxx-xxxx-xxxx">

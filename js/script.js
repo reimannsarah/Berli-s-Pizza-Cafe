@@ -56,15 +56,35 @@ function handlePizzaFormSubmission(e){
   let itemTotal = pizza.calculateCost();
   paymentTotal = itemTotal + paymentTotal;
   let orderSummary = document.getElementById("order-summary");
+  let runningTotal = document.getElementById("running-total");
   let pPizzaSize = document.createElement("p");
   let pToppings = document.createElement("p");
   let total = document.createElement("p");
-  total.innerText = "Total: $" + itemTotal;
+  total.innerText = "Item: $" + itemTotal;
   pPizzaSize.innerText =pizza.size + " Pizza";
   pToppings.innerText = "Toppings: " + pizza.toppings.join(", ");
   orderSummary.append(pPizzaSize,pToppings, total)
-  orderSummary.removeAttribute("class");  
+  orderSummary.removeAttribute("class");
+  runningTotal.innerText = "Total in your cart: $" + paymentTotal;
+  runningTotal.removeAttribute("class");
+  let payNowButton = document.getElementById("pay-now");
+  payNowButton.removeAttribute("class");
+
   resetForm();
+}
+
+function payNow() {
+  let removeOrderSummary = document.getElementById("remove-order-summary");
+  let paymentInfo = document.getElementById("payment-info");
+  removeOrderSummary.setAttribute("class", "remove-order-summary");
+  paymentInfo.removeAttribute("class");
+}
+
+function submitPayment(e) {
+  e.preventDefault();
+  let ccNumber = document.getElementById("credit-card").value;
+  let arrayedCCNumber = ccNumber.split("-");
+  console.log(arrayedCCNumber);
 }
 
 function resetForm() {
@@ -82,4 +102,7 @@ function formatCreditCard(input) {
 
 window.addEventListener("load", function() {
   this.document.getElementById("pizza-selection").addEventListener("submit",handlePizzaFormSubmission);
+  this.document.getElementById("pay-now").addEventListener("click", payNow);
+  this.document.getElementById("payment-info").addEventListener("submit",submitPayment);
 })
+

@@ -5,5 +5,9 @@
   display: none;
 }
 .order-summary-hidden {
+  display:none;
+}
+
+.remove-order-summary {
   display: none;
 }
