@@ -1,5 +1,6 @@
 //Global Variables
 let paymentTotal = 0;
+let itemTotal = 0;
 
 //Business logic
 
@@ -8,21 +9,21 @@ function Pizza (toppings, size) {
   this.size = size;
 }
 
-Pizza.prototype.calculateCost = function(){
+Pizza.prototype.calculateCost = function(){    
   let personal = 10;
   let medium = 12;
   let large = 14;
   let extraLarge = 16;
   if(this.size === "Personal"){
-    paymentTotal =  personal + this.toppings.length * 2;
+    itemTotal =  personal + this.toppings.length * 2;
   }else if(this.size === "Medium"){
-    paymentTotal =  medium + this.toppings.length * 2;
+    itemTotal =  medium + this.toppings.length * 2;
   }else if(this.size === "Large"){
-    paymentTotal =  large + this.toppings.length * 2;
+    itemTotal =  large + this.toppings.length * 2;
   }else if(this.size === "Extra Large"){
-    paymentTotal =  extraLarge + this.toppings.length * 2;
+    itemTotal =  extraLarge + this.toppings.length * 2;
   }
-  return paymentTotal;
+  return itemTotal;
 }
 
 function PaymentInfo (creditCardNumber, expDate, cvv, zipCode, tip){
@@ -52,18 +53,18 @@ function handlePizzaFormSubmission(e){
   let size = document.getElementById("size-selection").value;
   let toppings = arrayToppings();
   let pizza = new Pizza(toppings,size)
-  pizza.calculateCost();
-  console.log(pizza);
-  console.log(paymentTotal);
+  let itemTotal = pizza.calculateCost();
+  paymentTotal = itemTotal + paymentTotal;
   let orderSummary = document.getElementById("order-summary");
   let pPizzaSize = document.createElement("p");
   let pToppings = document.createElement("p");
   let total = document.createElement("p");
-  total.innerText = "Total: $" + paymentTotal;
+  total.innerText = "Total: $" + itemTotal;
   pPizzaSize.innerText =pizza.size + " Pizza";
   pToppings.innerText = "Toppings: " + pizza.toppings.join(", ");
   orderSummary.append(pPizzaSize,pToppings, total)
   orderSummary.removeAttribute("class");
+  
   resetForm();
 }
 
@@ -73,11 +74,6 @@ function resetForm() {
   pizzaForm.reset();
   }
 }
-
-
-
-
-
 
 function formatCreditCard(input) {
   let value = input.value.replace(/\D/g, "");
